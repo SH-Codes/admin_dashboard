@@ -1,0 +1,309 @@
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+body {
+    position: fixed;
+    width: 99.9%;
+    height: 99.8%;
+    border: 1px solid #c0c0c0;
+    border-radius: 20px;
+    top: -0.5em;
+    left: -0.5em;
+    
+}
+
+/* Extra small devices (phones, 0px to 575px) */
+@media (max-width: 575px) {
+    section {
+        width: 100%;
+        background-color: #5356FF;
+    }
+
+    ul li {
+        font-size: 14px;
+    }
+}
+
+/* Small devices (landscape phones, 576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    section {
+        width: 80%;
+        background-color:  #5356FF;
+    }
+
+    ul li {
+        font-size: 16px;
+    }
+}
+
+/* Medium devices (tablets, 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    section {
+        width: 70%;
+        background-color:  #5356FF;
+    }
+
+    ul li {
+        font-size: 18px;
+    }
+}
+
+/* Large devices (desktops, 992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1920px) {
+    .topbar {
+        width: 99.97%;
+        height: 5em;
+        background-color: #525CEB;
+        border-top-left-radius: 20px;
+        border-top-right-radius:20px;
+    }
+
+    .topbar div {
+        width: 76%;
+        height: 3em;
+        border:#000 1px solid;
+        float: right;
+        margin-top: 0.9em;
+        margin-right: 2.7em;
+    }
+
+    .date-time-display {
+        margin-left: 1.1em;
+        margin-top: -0.em;
+    }
+
+    .logged-user {
+        float: right;
+        margin-right: 2.1em;
+        margin-top: -2.5em;
+    }
+
+    .sidebar {
+        width: 99.99%;
+        height: 33em;
+        margin-top: -0.98em;
+        background-color: #525CEB;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .container {
+        width: 76.5%;
+        height: 30.6em;
+        /* border: 1px solid #000000; */
+        background-color: whitesmoke;
+        margin-top: -32.9em;
+        margin-left: 16em;
+        border-radius: 20px;
+    }
+
+    .control-wrapper {
+        width: 96%;
+        height: 8%;
+        /* border: 1px solid #000; */
+        padding-top: 0.8em;
+        padding-left: 0.8em;
+        margin-left: 0.8em;
+        border-radius: 20px;
+    }
+
+    .control-wrapper button {
+        width: 8em;
+        height: 2em;
+        color: #000;
+    }
+
+    /* .add-members-button {
+        margin-left: 3em;
+        width: 8em;
+        color: #000;
+    } */
+
+    /* .bookings-button {
+        padding-left: 3em;
+    }  */
+
+    .control-wrapper input {
+        float:right;
+        margin-right: 0.2em;
+        margin-top: -0.1em;
+        height: 1.8em;
+        width: 28em;
+    }
+
+    .search {
+        /* width: 0.5em; */
+        height: 2em;
+        margin-right: 1.3em;
+        float:right;
+        display:initial;
+    }
+
+    .stats-count-wrapper {
+        width: 97%;
+        height: 26%;
+        /* border: 1px solid #000; */
+        margin-left: 0.8em;
+        margin-top: 0.5em;
+    }
+
+    .heading-wrapper {
+        width: 96%;
+        height: 4em;
+        margin-left: 0.8em;
+        padding-left: 0.8em;
+        margin-top: 0.5em;
+        padding-top: -0.5em;
+        /* border: 1px solid #000000; */
+    }
+
+    .heading-wrapper h1 {
+        font-size: 2em;
+        color: #000;
+        padding-bottom: 1em;
+        margin-top: 0;
+        padding-top: 0.3em;
+    }
+
+    .stats-charts-wrapper {
+        width: 97%;
+        height: 42.8%;
+        /* border: 1px solid #000; */
+        margin-left: 0.8em;
+        margin-top: 0.4em;
+        border-radius: 20px;
+    }
+
+    .total-members-count-box {
+        width: 19em;
+        height: 90%;
+        /* border: 1px solid #000; */
+        background-color: #B4D4FF;
+        margin-left: 0.5em;
+        margin-top: 0.35em;
+        border-radius: 10px;
+    }
+
+    .total-funds-count-box {
+        width: 19em;
+        height: 90%;
+        /* border: 1px solid #000; */
+        background-color: #CDF0EA;
+        margin-left: 20em;
+        margin-top: -7.2em;
+        border-radius: 10px;
+    }
+
+    .total-new-members-count-box {
+        width: 19em;
+        height: 90%;
+        /* border: 1px solid #000; */
+        background-color: #FDF5CA;
+        margin-left: 39.5em;
+        margin-top: -7.2em;
+        border-radius: 10px;
+    }
+
+    .total-members-chart-box {
+        width: 19em;
+        height: 94%;
+        border: 1px solid #c0c0c0;
+        margin-left: 0.5em;
+        margin-top: 0.35em;
+        border-radius: 10px;
+    }
+
+    .total-funds-chart-box {
+        width: 19em;
+        height: 94%;
+        border: 1px solid #c0c0c0;
+        margin-left: 20em;
+        margin-top: -12.4em;
+        border-radius: 10px;
+    }
+
+    .total-new-members-chart-box {
+        width: 19em;
+        height: 94%;
+        border: 1px solid #c0c0c0;
+        margin-left: 39.5em;
+        margin-top: -12.4em;
+        border-radius: 10px;
+    }
+
+    ul {
+        padding-top: 4em;
+        margin-left: 0em;
+    }
+
+
+    ul li {
+        font-size: 20px;
+        margin-top: 0.5em;
+        list-style: none;
+    }
+
+    ul li a {
+        width: 12.75em; /* Set a fixed width */
+        height: 2.5em; /* Set a fixed height */
+        text-decoration: none;
+        padding-left: 4.9em;
+        padding-right: 2em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        margin-left: -1.96em;
+        box-sizing: border-box;
+        display: inline-block;
+        text-align: left; 
+
+    }
+
+    ul li a:hover {
+        width: 12.75em; /* Set a fixed width */
+        height: 2.5em; /* Set a fixed height */
+        text-decoration: none;
+        background-color: #6365ff;
+        padding-left: 4.9em;
+        padding-right: 2em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        margin-left: -1.96em;
+        box-sizing: border-box;
+        display: inline-block;
+        text-align: left; 
+
+    }
+
+    a img {
+        width: 1.2em; 
+        height: 1.2em;
+       margin-left: -3.5em;
+       margin-right: 2.5em;
+    }
+    
+
+  /* ul li a {
+        width: 5em;
+        height: 5em;
+        text-decoration: none;
+        border: 1px solid #000;
+        padding-left: 2em;
+        padding-right: 2em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        margin-left: -1em;
+    } */
+
+    /* li a { 
+        width: 5em;
+        text-align: right;
+        height: 4em;
+        border: #000;
+        border: 1px solid #000;
+    } */
+    }
+
+  

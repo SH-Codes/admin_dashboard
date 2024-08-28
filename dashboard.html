@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="topbar">
+        <div>
+            <h3 class="date-time-display">Day, Date, Time</h3>
+            <a class="logged-user" href="#">User</a>
+        </div>
+    </div>
+    <section class="sidebar">
+       <ul>
+        <li><a href="./dashboard.html"><img alt="dashboard icon" src="./resources/collage.png"/>Dashboard</a></li>
+        <li><a href="./finances.html"><img alt="finances icon" src="./resources/money.png"/>Finances</a></li>
+        <li><a href="./reports.html"><img alt="reports icon" src="./resources/analytics.png"/>Reports</a></li>
+        <li><a><img alt="settings icon" src="./resources/setting.png"/>Settings</a></li>
+        <li><a><img alt="logout icon" src="./resources/exit.png"/>Logout</a></li>
+       </ul>
+    </section>
+    <article class="container">
+        <div class="control-wrapper">
+            <button class="view-members-button" href="./dashboard.html">View Members</button>
+            <button class="add-members-botton">Add Members</button>
+            <button class="bookings">Bookings</button>
+            <button class="search">Search</button>
+            <input placeholder="Search by keyword: Name(s) or Member ID" />
+        </div>
+        <div class="heading-wrapper">
+            <h1>Overview</h1>
+        </div>
+        <div class="stats-count-wrapper">
+            <div class="total-members-count-box"></div>
+            <div class="total-funds-count-box"></div>
+            <div class="total-new-members-count-box"></div>
+        </div>
+        <div class="stats-charts-wrapper">
+            <div class="total-members-chart-box"></div>
+            <div class="total-funds-chart-box"></div>
+            <div class="total-new-members-chart-box"></div>
+        </div>
+    </article>
+</body>
+</html>
