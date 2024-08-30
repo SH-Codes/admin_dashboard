@@ -1,7 +1,7 @@
 
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
+    /* color: white; */
 }
 
 body {
@@ -64,15 +64,21 @@ body {
     .topbar div {
         width: 76%;
         height: 3em;
-        border:#000 1px solid;
+        /* border:#000 1px solid; */
         float: right;
         margin-top: 0.9em;
         margin-right: 2.7em;
     }
 
+    .topbar div a img {
+        width: 1.2em;
+        height: 1.2em;
+    }
+
     .date-time-display {
         margin-left: 1.1em;
         margin-top: -0.em;
+        color: #fff;
     }
 
     .logged-user {
@@ -86,6 +92,7 @@ body {
         height: 33em;
         margin-top: -0.98em;
         background-color: #525CEB;
+        color: #fff;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
     }
@@ -104,10 +111,10 @@ body {
         width: 96%;
         height: 8%;
         /* border: 1px solid #000; */
-        padding-top: 0.8em;
+        padding-top: 1.5em;
         padding-left: 0.8em;
         margin-left: 0.8em;
-        border-radius: 20px;
+        /* border-radius: 20px; */
     }
 
     .control-wrapper button {
@@ -234,6 +241,40 @@ body {
         border-radius: 10px;
     }
 
+    .page-switcher {
+        width: 93%;
+        height: 65%;
+        background-color: #fff;
+        border-radius: 10px;
+        margin-left: 2em;
+    }
+
+    .form-container {
+        display: inline;
+    }
+
+    .sub-form-container {
+        border:1px solid #ff0000;
+        width: 40%;
+        height: 20em;
+        margin-right: 2em;
+
+        /* grid-template-columns: 1fr; One column layout */
+        gap: 10px; /* Space between elements */
+}
+
+
+    legend {
+        font-weight: bold;
+    }
+
+    form input, select {
+        width: 13em;
+        margin-left: 0.8em;
+       
+
+    }
+
     ul {
         padding-top: 4em;
         margin-left: 0em;
@@ -250,6 +291,7 @@ body {
         width: 12.75em; /* Set a fixed width */
         height: 2.5em; /* Set a fixed height */
         text-decoration: none;
+        color: #fff;
         padding-left: 4.9em;
         padding-right: 2em;
         padding-top: 0.5em;
@@ -272,16 +314,17 @@ body {
         padding-bottom: 0.5em;
         margin-left: -1.96em;
         box-sizing: border-box;
-        display: inline-block;
+        /* display: inline-block; */
         text-align: left; 
 
     }
 
-    a img {
+    .sidebar img {
         width: 1.2em; 
         height: 1.2em;
        margin-left: -3.5em;
        margin-right: 2.5em;
+       /* display: block; */
     }
     
 
