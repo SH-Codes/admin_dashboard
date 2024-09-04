@@ -24,19 +24,21 @@
     </section>
     <article class="container">
         <div class="control-wrapper">
-            <button class="view-members-button" href="./dashboard.html">View Members</button>
-            <button class="add-members-botton">Add Members</button>
-            <button class="bookings">Bookings</button>
-            <button class="search">Search</button>
-            <input placeholder="Search by keyword: Name(s) or Member ID" />
+            <button class="view-members-button" onclick="location.href='view-members.html'">View Members</button>
+            <button class="add-members-button"  onclick="location.href='add-member.html'">Add Member</button>
+            <button class="bookings"  onclick="location.href='bookings.html'">Bookings</button>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search by keyword: Name(s) or Member ID" />
+                <button class="search-button"><img src="./resources/loupe.png" alt="Search" /></button>
+            </div>
         </div>
         <div class="heading-wrapper">
             <h1>Overview</h1>
         </div>
         <div class="stats-count-wrapper">
-            <div class="total-members-count-box"></div>
-            <div class="total-funds-count-box"></div>
-            <div class="total-new-members-count-box"></div>
+            <div class="total-members-count-box"><img alt="total members" src="./resources/group.png"></div>
+            <div class="total-funds-count-box"><img alt="money bag" src="./resources/money-bag.png"></div>
+            <div class="total-new-members-count-box"><img alt="total members" src="./resources/group.png"></div>
         </div>
         <div class="stats-charts-wrapper">
             <div class="total-members-chart-box"></div>
@@ -44,5 +46,6 @@
             <div class="total-new-members-chart-box"></div>
         </div>
     </article>
+    <script type="text/javascript" src="./js/main.js"></script>
 </body>
 </html>

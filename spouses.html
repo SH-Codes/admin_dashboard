@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <title>Add Member | Spouse Info</title>
+</head>
+<body>
+    <div class="topbar">
+        <div>
+            <h3 class="date-time-display">Day, Date, Time</h3>
+            <a class="logged-user" href="#"><img alt="user icon" src="./resources/user.png"/></a>
+        </div>
+    </div>
+    <section class="sidebar">
+       <ul>
+        <li><a href="./dashboard.html"><img alt="dashboard icon" src="./resources/collage.png"/>Dashboard</a></li>
+        <li><a href="./finances.html"><img alt="finances icon" src="./resources/money.png"/>Finances</a></li>
+        <li><a href="./reports.html"><img alt="reports icon" src="./resources/analytics.png"/>Reports</a></li>
+        <li><a><img alt="settings icon" src="./resources/setting.png"/>Settings</a></li>
+        <li><a><img alt="logout icon" src="./resources/exit.png"/>Logout</a></li>
+       </ul>
+    </section>
+    <article class="container">
+        <div class="control-wrapper">
+            <button class="view-members-button" onclick="location.href='view-members.html'">View Members</button>
+            <button class="add-members-button"  onclick="location.href='add-member.html'">Add Member</button>
+            <button class="bookings"  onclick="location.href='bookings.html'">Bookings</button>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search by keyword: Name(s) or Member ID" />
+                <button class="search-button"><img src="./resources/loupe.png" alt="Search" /></button>
+            </div>
+        </div>
+        <div class="heading-wrapper">
+            <h1>Add Member</h1>
+        </div>
+            <form>
+                <div class="form-container">
+                <div class="sub-form-container">
+                <legend>Spousal Information</legend>
+                <label for="Registration Date"> Spouse ID:</label>
+                <input type="text" placeholder="Spouse ID" readonly><br>
+                <label for="MemberId">Member ID:</label>
+                <input id="MemberId" type="text" placeholder="Member ID" readonly><br>
+                <label for="FirstName">First Name:</label>
+                <input id="FirstName" type="text" placeholder="First Name"><br>
+                <label for="MaidenName">Maiden Name:</label>
+                <input id="MaidenName" type="text" placeholder="Maiden Name"><br>
+                <label for="LastName">Last Name:</label>
+                <input id="LastName" type="text" placeholder="Last Name"><br>
+                <label for="BirthDate">Birth Date:</label>
+                <input id="BirthDate" type="date"><br>
+                    <label for="Gender">Gender:</label>
+                    <Select for="Gender">
+                        <option></option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </Select><br>
+                    <label for="EmploymentStatus">Employment Status:</label>
+                    <select>
+                        <option></option>
+                        <option>Employed</option>
+                        <option>Self-Employed</option>
+                        <option>Unemployed</option>
+                        <option>Student</option>
+                        <option>Pensioner</option>
+                    </select><br>
+                    <div class="form-column">
+                        <label for="occupation">Occupation:</label>
+                        <input type="text" placeholder="Occupation"><br>
+                        <label for="phonenumber">Phone Number:</label>
+                        <input type="tel" placeholder="0712345678"><br>
+                        <label for="mobilenumber">Mobile Number:</label>
+                        <input type="tel" placeholder="0712345678"><br>
+                        <label for="email">Email:</label>
+                        <input type="email" placeholder="user@example.com"><br>
+                        <label for="spousereligion">Spouse Religion:</label>
+                        <input type="text" placeholder="Spouse Religion"><br>
+                    </div>
+                </div>
+                <div class="form-buttons-alter">
+                    <button>Save</button>
+                    <button type="reset">Clear</button>
+                    <button>Update</button>
+                    <button>Delete</button>
+                    <button onclick="location.href='spouses.html'">Next</button>
+                    <button onclick="location.href='add-member.html'">Previous</button>
+                </div>
+                </div>
+            </form>
+        </div>
+    </article>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <title>Add Member | End of File</title>
+</head>
+<body>
+    <div class="topbar">
+        <div>
+            <h3 class="date-time-display">Day, Date, Time</h3>
+            <a class="logged-user" href="#"><img alt="user icon" src="./resources/user.png"/></a>
+        </div>
+    </div>
+    <section class="sidebar">
+       <ul>
+        <li><a href="./dashboard.html"><img alt="dashboard icon" src="./resources/collage.png"/>Dashboard</a></li>
+        <li><a href="./finances.html"><img alt="finances icon" src="./resources/money.png"/>Finances</a></li>
+        <li><a href="./reports.html"><img alt="reports icon" src="./resources/analytics.png"/>Reports</a></li>
+        <li><a><img alt="settings icon" src="./resources/setting.png"/>Settings</a></li>
+        <li><a><img alt="logout icon" src="./resources/exit.png"/>Logout</a></li>
+       </ul>
+    </section>
+    <article class="container">
+        <div class="control-wrapper">
+            <button class="view-members-button" onclick="location.href='view-members.html'">View Members</button>
+            <button class="add-members-button"  onclick="location.href='add-member.html'">Add Member</button>
+            <button class="bookings"  onclick="location.href='bookings.html'">Bookings</button>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search by keyword: Name(s) or Member ID" />
+                <button class="search-button"><img src="./resources/loupe.png" alt="Search" /></button>
+            </div>
+        </div>
+        <div class="heading-wrapper">
+            <h1>Add Member</h1>
+        </div>
+            <form>
+             
+                <div class="form-container">
+                    <div class="sub-form-container">
+                <legend>End of File</legend>
+                <label for="dependentid">EOF ID:</label>
+                <input type="text" placeholder="EOF ID" readonly><br>
+                <label for="MemberId">Member ID:</label>
+                <input id="MemberId" type="text" placeholder="Member ID" readonly><br>
+                <label for="FirstName">First Name:</label>
+                <input id="FirstName" type="text" placeholder="First Name"><br>
+                <label for="LastName">Last Name:</label>
+                <input id="LastName" type="text" placeholder="Last Name"><br>
+                <label for="BirthDate">Date of Death:</label>
+                <input id="DeathDate" type="date"><br>
+                <label for="BirthDate">Burial Date:</label>
+                <input id="BurialDate" type="date"><br>
+                <label for="BurialPlace">Burial Place:</label>
+                <input type="text" placeholder="Place of Burial"><br>
+                <label for="AttendsSundaySchool">Received Viaticum?</label>
+                <select>
+                    <option></option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+                <div class="form-column-end-of-file">
+                    <label for="ConfirmationPlace">Place Confirmed:</label>
+                    <input id="ConfirmationPlace" type="text" placeholder="Confirmation Place"><br>
+                    <label for="ConfirmationClergy">Confirmation Clergy:</label>
+                    <input id="ConfirmationClergy" type="text" placeholder="Confirmation Clergy">
+                </div>
+            </div>
+                </div>
+                <div class="form-buttons-end-of-file">
+                
+                    <button>Save</button>
+                    <button type="reset">Clear</button>
+                    <button>Update</button>
+                    <button>Delete</button>
+                    <button onclick="location.href='spouses.html'">Previous</button>
+                </div>
+                </div>
+        </div>
+
+            </form>
+        </div>
+    </article>
+</body>
+</html>
