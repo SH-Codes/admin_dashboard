@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
     <title>Add Member | Personal Info</title>
     <style>
         .next-button-only {
             margin-top: 3.8em; 
             cursor: pointer;
+        }
+
+        #MemberStatus {
+            font-weight: bold;
+            /* margin-right: -5em; */
         }
     </style>
 </head>
@@ -21,18 +27,18 @@
     </div>
     <section class="sidebar">
        <ul>
-        <li><a href="./dashboard.html"><img alt="dashboard icon" src="./resources/collage.png"/>Dashboard</a></li>
-        <li><a href="./finances.html"><img alt="finances icon" src="./resources/money.png"/>Finances</a></li>
-        <li><a href="./reports.html"><img alt="reports icon" src="./resources/analytics.png"/>Reports</a></li>
-        <li><a><img alt="settings icon" src="./resources/setting.png"/>Settings</a></li>
-        <li><a><img alt="logout icon" src="./resources/exit.png"/>Logout</a></li>
+        <li><a href="./dashboard.html"><img alt="dashboard icon" src="resources/collage.png"/>Dashboard</a></li>
+        <li><a href="./finances.html"><img alt="finances icon" src="resources/money.png"/>Finances</a></li>
+        <li><a href="./reports.html"><img alt="reports icon" src="resources/analytics.png"/>Reports</a></li>
+        <li><a><img alt="settings icon" src="resources/setting.png"/>Settings</a></li>
+        <li><a><img alt="logout icon" src="resources/exit.png"/>Logout</a></li>
        </ul>
     </section>
     <article class="container">
         <div class="control-wrapper">
-            <button class="view-members-button" onclick="location.href='view-members.html'">View Members</button>
-            <button class="add-members-button"  onclick="location.href='add-member.html'">Add Member</button>
-            <button class="bookings"  onclick="location.href='bookings.html'">Bookings</button>
+            <button type="button" class="view-members-button" onclick="location.href='view-members.html'">View Members</button>
+            <button type="button" class="add-members-button"  onclick="location.href='add-member.html'">Add Member</button>
+            <button type="button" class="bookings"  onclick="location.href='bookings.html'">Bookings</button>
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="Search by keyword: Name(s) or Member ID" />
                 <button class="search-button"><img src="./resources/loupe.png" alt="Search" /></button>
@@ -110,13 +116,13 @@
                     </div>
                 </div>
                 <div class="form-buttons">
-                    <button>Save</button>
+                    <button type="button">Save</button>
                     <button type="reset">Clear</button>
-                    <button>Update</button>
-                    <button>Delete</button>
-                    <button>View File</button>
-                    <button>Make Payment</button>
-                    <button class="next-button-only" onclick="location.href='spouses.html'">Next</button>
+                    <button type="button">Update</button>
+                    <button type="button">Delete</button>
+                    <button type="button">View File</button>
+                    <button type="button">Make Payment</button>
+                    <button type="button" class="next-button-only" onclick="location.href='spouses.html'">Next</button>
                 </div>
                 </div>
         </div>
@@ -124,29 +130,6 @@
             </form>
         </div>
     </article>
-    <script>
-        const statusSelect = document.getElementsByClassName('MemberStatus');
-  const memberStatusLabel = document.getElementById('MemberStatus');
-
-  statusSelect.addEventListener('change', function() {
-    switch (this.value) {
-      case 'Active':
-        memberStatusLabel.style.color = 'green';
-        statusSelect.style.backgroundColor = 'green';
-        statusSelect.style.color = 'white';
-        break;
-      case 'Inactive':
-        memberStatusLabel.style.color = 'orange';
-        statusSelect.style.backgroundColor = 'orange';
-        statusSelect.style.color = 'white';
-        break;
-      case 'Deceased':
-        memberStatusLabel.style.color = 'red';
-        statusSelect.style.backgroundColor = 'red';
-        statusSelect.style.color = 'white';
-        break;
-    }
-  });
-      </script>
+       <script type="text/javascript" src="./static/js/main.js"></script>
 </body>
 </html>

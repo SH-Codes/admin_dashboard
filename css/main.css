@@ -77,10 +77,12 @@ body {
         height: 1.2em;
     }
 
-    .date-time-display {
+    .date-time-display  {
         margin-left: 1.1em;
-        margin-top: -0.em;
+        margin-top: 1em;
         color: #fff;
+        font-size: 20px;
+        font-weight: normal;
     }
 
     .logged-user {
