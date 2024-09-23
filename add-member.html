@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js" defer></script>
+    <script src="js/validation.js" defer></script>
     <title>Add Member | Personal Info</title>
     <style>
         .next-button-only {
@@ -21,7 +22,7 @@
 <body>
     <div class="topbar">
         <div>
-            <h3 class="date-time-display">Day, Date, Time</h3>
+            <h3 class="date-time-display"></h3>
             <a class="logged-user" href="#"><img alt="user icon" src="./resources/user.png"/></a>
         </div>
     </div>
@@ -31,7 +32,7 @@
         <li><a href="./finances.html"><img alt="finances icon" src="resources/money.png"/>Finances</a></li>
         <li><a href="./reports.html"><img alt="reports icon" src="resources/analytics.png"/>Reports</a></li>
         <li><a><img alt="settings icon" src="resources/setting.png"/>Settings</a></li>
-        <li><a><img alt="logout icon" src="resources/exit.png"/>Logout</a></li>
+        <li><a href="./signin.html"><img alt="logout icon" src="resources/exit.png"/>Logout</a></li>
        </ul>
     </section>
     <article class="container">
@@ -46,6 +47,7 @@
         </div>
         <div class="heading-wrapper">
             <h1>Add Member</h1>
+            <span id="error"></span>
             <div style="float: right; margin-top: -5.5em;">
                 <Strong><label for="MemberStatus" id="MemberStatus" style="margin-right: -5em;">Status:</label></Strong>
             <select class="MemberStatus" style="width: 8em; margin-right: 1.40em;">
@@ -56,7 +58,7 @@
             </select>
             </div>
         </div>
-            <form>
+            <form id="personalInfoForm">
              
                 <div class="form-container">
                     <div class="sub-form-container">
@@ -66,19 +68,19 @@
                 <label for="MemberId">Member ID:</label>
                 <input id="MemberId" type="text" placeholder="Member ID" readonly><br>
                 <label for="FirstName">First Name:</label>
-                <input id="FirstName" type="text" placeholder="First Name"><br>
+                <input id="firstName" type="text" placeholder="First Name"><br>
                 <label for="LastName">Last Name:</label>
                 <input id="LastName" type="text" placeholder="Last Name"><br>
                 <label for="BirthDate">Birth Date:</label>
                 <input id="BirthDate" type="date"><br>
                     <label for="Gender">Gender:</label>
-                    <Select for="Gender">
+                    <Select for="Gender" id="gender">
                         <option></option>
                         <option>Male</option>
                         <option>Female</option>
                     </Select><br>
                 <label for="Marital Status">Marital Status:</label>
-                    <select>
+                    <select id="maritalStatus">
                         <option></option>
                         <option>Single</option>
                         <option>Married</option>
@@ -87,7 +89,7 @@
                         <option>Widowed</option>
                     </select><br>
                     <label for="EmploymentStatus">Employment Status:</label>
-                    <select>
+                    <select id="employmentStatus">
                         <option></option>
                         <option>Employed</option>
                         <option>Self-Employed</option>
@@ -98,21 +100,21 @@
                    
                     <div class="form-column">
                         <label for="occupation">Occupation:</label>
-                        <input type="text" placeholder="Occupation"><br>
+                        <input type="text" id="occupation" placeholder="Occupation"><br>
                         <label for="phonenumber">Phone Number:</label>
-                        <input type="tel" placeholder="0712345678"><br>
-                        <label for="mobilenumber">Mobile Number:</label>
-                        <input type="tel" placeholder="0712345678"><br>
+                        <input type="tel" id="phoneNumber" placeholder="0712345678"><br>
+                        <label for="mobileNumber">Mobile Number:</label>
+                        <input type="tel" id="mobile" placeholder="0712345678"><br>
                         <label for="email">Email:</label>
-                        <input type="email" placeholder="user@example.com"><br>
+                        <input type="email" id="email" placeholder="user@example.com"><br>
                         <label for="addressline1">Address Line 1:</label>
-                        <input type="text" placeholder="Address Line 1"><br>
+                        <input type="text" id="addressLine1" placeholder="Address Line 1"><br>
                         <label for="addressline2">Address Line 2:</label>
-                        <input type="text" placeholder="Address Line 2"><br>
+                        <input type="text" id="addressLine2" placeholder="Address Line 2"><br>
                         <label for="zonearea">Zone Area:</label>
-                        <input type="text" placeholder="Zone Area"><br>
+                        <input type="text" id="zoneArea" placeholder="Zone Area"><br>
                         <label for="PostalCode">Postal Code:</label>
-                        <input type="text" placeholder="0000"><br>
+                        <input type="text" id="postalCode" placeholder="1234"><br>
                     </div>
                 </div>
                 <div class="form-buttons">
@@ -130,6 +132,5 @@
             </form>
         </div>
     </article>
-       <script type="text/javascript" src="./static/js/main.js"></script>
 </body>
 </html>

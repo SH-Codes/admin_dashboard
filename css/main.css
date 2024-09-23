@@ -316,7 +316,6 @@ body {
     }
 
     .sub-form-container {
-        /* border:1px solid #ff0000; */
         height: 20em;
         margin-right: 5em;
 }
@@ -511,7 +510,6 @@ label {
         padding-bottom: 0.5em;
         margin-left: -1.96em;
         box-sizing: border-box;
-        /* display: inline-block; */
         text-align: left; 
 
     }
@@ -521,7 +519,6 @@ label {
         height: 1.2em;
        margin-left: -3.5em;
        margin-right: 2.5em;
-       /* display: block; */
     }
 }
 
@@ -589,22 +586,38 @@ label {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     float: right;
-    margin-top: -24.5em;
+    margin-top: -23em;
     color: #ffffff;
+}
+
+.signup-hover { 
+   width: 8em;
+   height: 2.2em;
+   margin-left: 13em;
+   cursor: pointer;
+}
+
+.signup-hover:hover {
+    color: #525CEB;
+    background-color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
 }
 
 .signup-container {
     width: 70%;
     height: 25em;
-    /* border: 1px solid #000000; */
     background-color: whitesmoke;
     margin-top: -32em;
     margin-left: 11.5em;
     border-radius: 20px;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   
 }
 
 .signup-container form {
-    padding-top: 5em;
+    padding-top: 3.5em;
 }
 
 .signup-container form input {
@@ -613,18 +626,18 @@ label {
 }
 
 .signup-container form {
-    margin-left: 4em;
+    margin-left: 3.6em;
 }
 
 .signup-container form button {
-    margin-left: 9.6em;
+    margin-left: 10em;
     width: 8em;
     height: 2em;
     cursor: pointer;
 }
 
 .signup-container form button:hover {
-    margin-left: 9.6em;
+    margin-left: 10em;
     width: 8em;
     height: 2em;
     background-color: #525CEB;
@@ -632,6 +645,11 @@ label {
     border: none;
     border-radius: 2px;
     cursor: pointer;
+}
+
+.error {
+    font-family: 'Courier New', Courier, monospace;
+    color: #db4e4e;
 }
 
 .sign-in {
@@ -664,21 +682,19 @@ label {
 
 .sign-up-form button {
     width: 8em;
-    height: 1.8em;
+    height: 2em;
     margin-left: 15em;
 }
 
 .sign-up-form button:hover {
     width: 8em;
-    height: 1.8em;
+    height: 2em;
     margin-left: 15em;
     border: none;
     border-radius: 2px;
     background-color: #525CEB;
     color: #ffffff;
 }
-
-
 
 .signin-signup li a:hover {
     font-weight: bold;

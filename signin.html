@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
+    <title>Sign In</title>
+</head>
+<body>
+    <section class="signup-page"></section>
+    <article class="signup-container">
+        <form class="signinForm" id="signinForm" method="post">
+            <div class="form-container">
+                <div class="sub-form-container">
+                    <legend style="font-size:18pt; margin-left: 5.8em; color: #525CEB">Sign In</legend>
+                    <label for="email">Email:</label>
+                    <input id="email" type="email" placeholder="example@domain.com"><br>
+
+                    <label for="password">Password:</label>
+                    <input id="password" type="password" placeholder="Password"><br>
+
+                    <input style="margin-left:1.4em;" type="checkbox"><label style="margin-left: -5em;">Remember me</label><br>
+
+                    <button id="signInButton" type="button"> Sign In</button><br>
+                    <p><a href="" style="color: #525CEB; margin-left: 8.3em;">reset password</a></p>
+                </div>
+                <span id="emailError" class="signInError"></span>
+                <span id="passwordError" class="signInError"></span>
+            </div>
+        </form>
+        <div class="page-splitter">
+            <img src="./resources/MS-01.png" style="width: 7em; margin-left: 10.5em; margin-top: 5em;">
+            <p style="margin-left: 8.5em;">Don't have an account?</p>
+            <button class="signup-hover" type="button" onclick="location.href='signup.html'">Sign Up</button>
+        </div>
+    </article>
+</body>
+</html>
