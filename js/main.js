@@ -1,4 +1,4 @@
-function updateDateTime() {
+function updateDateTime () {
   const dateTimeDisplay = document.querySelector('.date-time-display');
   const date = new Date();
 
@@ -16,13 +16,14 @@ setInterval(updateDateTime, 1000);
 // Initial call to set the date and time immediately
 updateDateTime();
 
-//Button navigation
-function navigateTo(page) {
+// Button navigation
+function navigateTo (page) {
   window.location.href = page;
 }
 
+navigateTo();
 
-function changeLabelColor() {
+function changeLabelColor () {
   const selectElement = document.getElementById('MemberStatusSelect');
   const labelElement = document.getElementById('MemberStatus');
 
@@ -33,39 +34,38 @@ function changeLabelColor() {
 
   // Change label color based on the selected option
   if (selectedValue === 'Active') {
-      labelElement.style.color = 'green';
+    labelElement.style.color = 'green';
   } else if (selectedValue === 'Inactive') {
-      labelElement.style.color = 'orange';
+    labelElement.style.color = 'orange';
   } else if (selectedValue === 'Deceased') {
-      labelElement.style.color = 'red';
+    labelElement.style.color = 'red';
   }
 }
 
 // Add event listener to call the function when the selection changes
 document.getElementById('MemberStatusSelect').addEventListener('change', changeLabelColor);
 
+changeLabelColor();
 
-changeLabelColor ();
-
-function generateMembershipNumber() {
+function generateMembershipNumber () {
   const registrationDate = document.getElementById('RegistrationDate').value;
   const gender = document.getElementById('Gender').value;
 
   // Ensure both fields are filled
   if (!registrationDate || !gender) {
-      alert('Please select both Registration Date and Gender');
-      return;
+    alert('Please select both Registration Date and Gender');
+    return;
   }
 
   // Extract the last two digits of the registration year
   const year = new Date(registrationDate).getFullYear().toString().slice(-2);
 
   // Gender mapping (1 for Male, 2 for Female)
-  const genderMapping = { 'Male': '1', 'Female': '2' };
+  const genderMapping = { Male: '1', Female: '2' };
   const genderPart = genderMapping[gender] || '0';
 
- // Generate the last five random digits
-const randomPart = Math.floor(10000 + Math.random() * 90000).toString();
+  // Generate the last five random digits
+  const randomPart = Math.floor(10000 + Math.random() * 90000).toString();
 
   // Construct the 6-digit membership number
   const membershipNumber = year + genderPart + randomPart;
@@ -74,9 +74,7 @@ const randomPart = Math.floor(10000 + Math.random() * 90000).toString();
   document.getElementById('MemberId').value = membershipNumber;
 }
 
-
-
-document.getElementById('signInButton').addEventListener('click', function(event) {
+document.getElementById('signInButton').addEventListener('click', function (event) {
   // Prevent default behavior (e.g., page refresh)
   event.preventDefault();
 
@@ -88,404 +86,402 @@ document.getElementById('signInButton').addEventListener('click', function(event
   // Validate Email
   const email = document.getElementById('email').value;
   if (!validateEmail(email)) {
-      setError('emailError', 'Please enter a valid email address');
-      valid = false;
+    setError('emailError', 'Please enter a valid email address');
+    valid = false;
   }
 
   // Validate Password
   const password = document.getElementById('password').value;
   if (password.length < 6) {
-      setError('passwordError', 'Password must be at least 6 characters long');
-      valid = false;
+    setError('passwordError', 'Password must be at least 6 characters long');
+    valid = false;
   }
 
   // If valid, redirect to dashboard
   if (valid) {
-      window.location.href = 'dashboard.html';
+    window.location.href = 'dashboard.html';
   }
 });
 
 // Clear any previous error messages
-function clearErrors() {
+function clearErrors () {
   document.getElementById('emailError').textContent = '';
   document.getElementById('passwordError').textContent = '';
 }
 
 // Set error message for a field
-function setError(id, message) {
+function setError (id, message) {
   document.getElementById(id).textContent = message;
   document.getElementById(id).style.color = 'red';
 }
 
 // Validate email using regex
-function validateEmail(email) {
+function validateEmail (email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
 
-document.getElementById('personalInfoForm').addEventListener('submit', function(event){
+document.getElementById('personalInfoForm').addEventListener('submit', function (event) {
   // Prevent form submission to validate first
   event.preventDefault();
 
   const firstName = document.getElementById('firstName').value.trim();
-  let lastName = document.getElementById('lastName').value.trim();
+  const lastName = document.getElementById('lastName').value.trim();
   const birthDate = new Date(document.getElementById('birthDate').value);
   const gender = document.getElementById('gender').value;
-  let maritalStatus = document.getElementById('maritalStatus').value;
-  let employmentStatus = document.getElementById('employmentStatus').value;
-  let occupation = document.getElementById('occupation').value.trim();
-  let phoneNumber = document.getElementById('phoneNumber').value.trim();
-  let mobileNumber = document.getElementById('mobileNumber').value.trim();
-  let email = document.getElementById('email').value.trim();
-  let addressLine1 = document.getElementById('addressLine1').value.trim();
-  let addressLine2 = document.getElementById('addressLine2').value.trim();
-  let zoneArea = document.getElementById('zoneArea').value.trim();
-  let postalCode = document.getElementById('postalCode').value.trim();
+  const maritalStatus = document.getElementById('maritalStatus').value;
+  const employmentStatus = document.getElementById('employmentStatus').value;
+  const occupation = document.getElementById('occupation').value.trim();
+  const phoneNumber = document.getElementById('phoneNumber').value.trim();
+  const mobileNumber = document.getElementById('mobileNumber').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const addressLine1 = document.getElementById('addressLine1').value.trim();
+  const addressLine2 = document.getElementById('addressLine2').value.trim();
+  const zoneArea = document.getElementById('zoneArea').value.trim();
+  const postalCode = document.getElementById('postalCode').value.trim();
 
   // Email validation
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   let isValid = true;
-  let errorMessage = "";
+  let errorMessage = '';
 
   // Validate First Name
-  if (firstName === ""){
-      errorMessage += "First Name is required.\n";
-      document.getElementById('firstName').style.borderColor = "red";
-      isValid = false;
+  if (firstName === '') {
+    errorMessage += 'First Name is required.\n';
+    document.getElementById('firstName').style.borderColor = 'red';
+    isValid = false;
   } else if (firstName.length < 4) {
-      errorMessage += "First Name must have at least 4 characters.\n";
-      document.getElementById('firstName').style.borderColor = "red";
-      isValid = false;
+    errorMessage += 'First Name must have at least 4 characters.\n';
+    document.getElementById('firstName').style.borderColor = 'red';
+    isValid = false;
   } else {
-      document.getElementById('firstName').style.borderColor = "";
+    document.getElementById('firstName').style.borderColor = '';
   }
 
   // Validate Last Name
-  if (lastName === ""){
-      errorMessage += "Last Name is required.\n";
-      document.getElementById('lastName').style.borderColor = "red";
-      isValid = false;
+  if (lastName === '') {
+    errorMessage += 'Last Name is required.\n';
+    document.getElementById('lastName').style.borderColor = 'red';
+    isValid = false;
   } else if (lastName.length < 4) {
-      errorMessage += "Last Name must have at least 4 characters.\n";
-      document.getElementById('lastName').style.borderColor = "red";
-      isValid = false;
+    errorMessage += 'Last Name must have at least 4 characters.\n';
+    document.getElementById('lastName').style.borderColor = 'red';
+    isValid = false;
   } else {
-      document.getElementById('lastName').style.borderColor = "";
+    document.getElementById('lastName').style.borderColor = '';
   }
 
   // Validate Birth Date
   if (birthDate >= new Date()) {
-      errorMessage += "Birth date cannot be today or in the future.\n";
-      document.getElementById('birthDate').style.borderColor = "red";
-      isValid = false;
+    errorMessage += 'Birth date cannot be today or in the future.\n';
+    document.getElementById('birthDate').style.borderColor = 'red';
+    isValid = false;
   } else {
-      document.getElementById('birthDate').style.borderColor = "";
+    document.getElementById('birthDate').style.borderColor = '';
   }
 
   // Validate Gender
-  if (gender === "") {
-      errorMessage += "Gender is required.\n";
-      document.getElementById('gender').style.borderColor = "red";
-      isValid = false;
+  if (gender === '') {
+    errorMessage += 'Gender is required.\n';
+    document.getElementById('gender').style.borderColor = 'red';
+    isValid = false;
   } else {
-      document.getElementById('gender').style.borderColor = "";
+    document.getElementById('gender').style.borderColor = '';
   }
 
   // Validate Marital Status
-  if (maritalStatus === "") {
-      errorMessage += "Marital Status is required.\n";
-      document.getElementById('maritalStatus').style.borderColor = "red";
-      isValid = false;
+  if (maritalStatus === '') {
+    errorMessage += 'Marital Status is required.\n';
+    document.getElementById('maritalStatus').style.borderColor = 'red';
+    isValid = false;
   } else {
-      document.getElementById('maritalStatus').style.borderColor = "";
+    document.getElementById('maritalStatus').style.borderColor = '';
   }
 
   // Validate Employment Status and Occupation
-  if ((employmentStatus === "Employed" || employmentStatus === "Self Employed") && occupation === "") {
-      errorMessage += "Occupation is required for active employment status.\n";
-      document.getElementById('occupation').style.borderColor = "red";
-      isValid = false;
+  if ((employmentStatus === 'Employed' || employmentStatus === 'Self Employed') && occupation === '') {
+    errorMessage += 'Occupation is required for active employment status.\n';
+    document.getElementById('occupation').style.borderColor = 'red';
+    isValid = false;
   } else {
-      document.getElementById('occupation').style.borderColor = "";
+    document.getElementById('occupation').style.borderColor = '';
   }
 
   // Validate Phone Number
   if (isNaN(phoneNumber) || phoneNumber.length !== 10) {
-      errorMessage += "Enter a valid Phone number with 10 digits.\n";
-      document.getElementById('phoneNumber').style.borderColor = "red";
-      isValid = false;
+    errorMessage += 'Enter a valid Phone number with 10 digits.\n';
+    document.getElementById('phoneNumber').style.borderColor = 'red';
+    isValid = false;
   } else {
-      document.getElementById('phoneNumber').style.borderColor = "";
+    document.getElementById('phoneNumber').style.borderColor = '';
   }
 
   // Validate Mobile Number
   if (isNaN(mobileNumber) || mobileNumber.length !== 10) {
-      errorMessage += "Enter a valid Mobile number with 10 digits.\n";
-      document.getElementById('mobileNumber').style.borderColor = "red";
-      isValid = false;
+    errorMessage += 'Enter a valid Mobile number with 10 digits.\n';
+    document.getElementById('mobileNumber').style.borderColor = 'red';
+    isValid = false;
   } else {
-      document.getElementById('mobileNumber').style.borderColor = "";
+    document.getElementById('mobileNumber').style.borderColor = '';
   }
 
   // Validate Email
   if (!emailPattern.test(email)) {
-      errorMessage += "Please enter a valid email address.\n";
-      document.getElementById('email').style.borderColor = "red";
-      isValid = false;
+    errorMessage += 'Please enter a valid email address.\n';
+    document.getElementById('email').style.borderColor = 'red';
+    isValid = false;
   } else {
-      document.getElementById('email').style.borderColor = "";
+    document.getElementById('email').style.borderColor = '';
   }
 
   // Validate Address Line 1 and 2
-  if (addressLine1 === "" || addressLine2 === "") {
-      errorMessage += "Address Line 1 and Address Line 2 cannot be empty.\n";
-      document.getElementById('addressLine1').style.borderColor = "red";
-      document.getElementById('addressLine2').style.borderColor = "red";
-      isValid = false;
+  if (addressLine1 === '' || addressLine2 === '') {
+    errorMessage += 'Address Line 1 and Address Line 2 cannot be empty.\n';
+    document.getElementById('addressLine1').style.borderColor = 'red';
+    document.getElementById('addressLine2').style.borderColor = 'red';
+    isValid = false;
   } else {
-      document.getElementById('addressLine1').style.borderColor = "";
-      document.getElementById('addressLine2').style.borderColor = "";
+    document.getElementById('addressLine1').style.borderColor = '';
+    document.getElementById('addressLine2').style.borderColor = '';
   }
 
   // Validate Zone Area
-  if (zoneArea.length < 4 || zoneArea === "") {
-      errorMessage += "Zone area must have at least 4 characters.\n";
-      document.getElementById('zoneArea').style.borderColor = "red";
-      isValid = false;
+  if (zoneArea.length < 4 || zoneArea === '') {
+    errorMessage += 'Zone area must have at least 4 characters.\n';
+    document.getElementById('zoneArea').style.borderColor = 'red';
+    isValid = false;
   } else {
-      document.getElementById('zoneArea').style.borderColor = "";
+    document.getElementById('zoneArea').style.borderColor = '';
   }
 
   // Validate Postal Code
   if (isNaN(postalCode) || postalCode.length < 4 || postalCode.length > 5) {
-      errorMessage += "Postal Code must be a number and contain 4-5 digits.\n";
-      document.getElementById('postalCode').style.borderColor = "red";
-      isValid = false;
+    errorMessage += 'Postal Code must be a number and contain 4-5 digits.\n';
+    document.getElementById('postalCode').style.borderColor = 'red';
+    isValid = false;
   } else {
-      document.getElementById('postalCode').style.borderColor = "";
+    document.getElementById('postalCode').style.borderColor = '';
   }
 
   // Display error message if invalid
   if (!isValid) {
-      alert(errorMessage); // You can also display this in a custom error container
+    alert(errorMessage); // You can also display this in a custom error container
   } else {
-      // Submit the form or call any function like generateMembershipNumber()
-      generateMembershipNumber();
+    // Submit the form or call any function like generateMembershipNumber()
+    generateMembershipNumber();
   }
 });
 
+document.getElementById('spouseInfoForm').addEventListener('submit', function (event) {
+  event.preventDefault();
 
-document.getElementById("spouseInfoForm").addEventListener('submit', function(event) {
-    event.preventDefault();
+  const firstName = document.getElementById('firstName').value.trim();
+  const maidenName = document.getElementById('maidenName').value.trim();
+  const lastName = document.getElementById('lastName').value.trim();
+  const birthDate = new Date(document.getElementById('birthDate').value);
+  const gender = document.getElementById('gender').value;
+  const employmentStatus = document.getElementById('employmentStatus').value;
+  const occupation = document.getElementById('occupation').value.trim();
+  const phoneNumber = document.getElementById('phoneNumber').value.trim();
+  const mobileNumber = document.getElementById('mobileNumber').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const spouseReligion = document.getElementById('spouseReligion').value.trim();
 
-    const firstName = document.getElementById('firstName').value.trim();
-    let maidenName = document.getElementById('maidenName').value.trim();
-    let lastName = document.getElementById('lastName').value.trim();
-    const birthDate = new Date(document.getElementById('birthDate').value);
-    const gender = document.getElementById('gender').value;
-    let employmentStatus = document.getElementById('employmentStatus').value;
-    let occupation = document.getElementById('occupation').value.trim();
-    let phoneNumber = document.getElementById('phoneNumber').value.trim();
-    let mobileNumber = document.getElementById('mobileNumber').value.trim();
-    let email = document.getElementById('email').value.trim();
-    let spouseReligion = document.getElementById('spouseReligion').value.trim();
+  // Email validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let isValid = true;
+  let errorMessage = '';
 
-    let isValid = true;
-    let errorMessage = "";
+  // Validate First Name
+  if (firstName === '') {
+    errorMessage += 'First Name is required.\n';
+    document.getElementById('firstName').style.borderColor = 'red';
+    isValid = false;
+  } else if (firstName.length < 4) {
+    errorMessage += 'First Name must have at least 4 characters.\n';
+    document.getElementById('firstName').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('firstName').style.borderColor = '';
+  }
 
-    // Validate First Name
-    if (firstName === "") {
-        errorMessage += "First Name is required.\n";
-        document.getElementById('firstName').style.borderColor = "red";
-        isValid = false;
-    } else if (firstName.length < 4) {
-        errorMessage += "First Name must have at least 4 characters.\n";
-        document.getElementById('firstName').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('firstName').style.borderColor = "";
-    }
+  // Validate Maiden Name
+  if (maidenName !== '' && maidenName.length < 4) {
+    errorMessage += 'Maiden Name must have at least 4 characters.\n';
+    document.getElementById('maidenName').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('maidenName').style.borderColor = '';
+  }
 
-    // Validate Maiden Name
-    if (maidenName !== "" && maidenName.length < 4) {
-        errorMessage += "Maiden Name must have at least 4 characters.\n";
-        document.getElementById('maidenName').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('maidenName').style.borderColor = "";
-    }
+  // Validate Last Name
+  if (lastName === '') {
+    errorMessage += 'Last Name is required.\n';
+    document.getElementById('lastName').style.borderColor = 'red';
+    isValid = false;
+  } else if (lastName.length < 4) {
+    errorMessage += 'Last Name must have at least 4 characters.\n';
+    document.getElementById('lastName').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('lastName').style.borderColor = '';
+  }
 
-    // Validate Last Name
-    if (lastName === "") {
-        errorMessage += "Last Name is required.\n";
-        document.getElementById('lastName').style.borderColor = "red";
-        isValid = false;
-    } else if (lastName.length < 4) {
-        errorMessage += "Last Name must have at least 4 characters.\n";
-        document.getElementById('lastName').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('lastName').style.borderColor = "";
-    }
+  // Validate Birth Date
+  if (birthDate >= new Date()) {
+    errorMessage += 'Birth date cannot be today or in the future.\n';
+    document.getElementById('birthDate').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('birthDate').style.borderColor = '';
+  }
 
-    // Validate Birth Date
-    if (birthDate >= new Date()) {
-        errorMessage += "Birth date cannot be today or in the future.\n";
-        document.getElementById('birthDate').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('birthDate').style.borderColor = "";
-    }
+  // Validate Gender
+  if (gender === '') {
+    errorMessage += 'Gender is required.\n';
+    document.getElementById('gender').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('gender').style.borderColor = '';
+  }
 
-    // Validate Gender
-    if (gender === "") {
-        errorMessage += "Gender is required.\n";
-        document.getElementById('gender').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('gender').style.borderColor = "";
-    }
+  // Validate Employment Status and Occupation
+  if ((employmentStatus === 'Employed' || employmentStatus === 'Self Employed') && occupation === '') {
+    errorMessage += 'Occupation is required for active employment status.\n';
+    document.getElementById('occupation').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('occupation').style.borderColor = '';
+  }
 
-    // Validate Employment Status and Occupation
-    if ((employmentStatus === "Employed" || employmentStatus === "Self Employed") && occupation === "") {
-        errorMessage += "Occupation is required for active employment status.\n";
-        document.getElementById('occupation').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('occupation').style.borderColor = "";
-    }
+  // Validate Phone Number
+  if (isNaN(phoneNumber) || phoneNumber.length !== 10) {
+    errorMessage += 'Enter a valid Phone number with 10 digits.\n';
+    document.getElementById('phoneNumber').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('phoneNumber').style.borderColor = '';
+  }
 
-    // Validate Phone Number
-    if (isNaN(phoneNumber) || phoneNumber.length !== 10) {
-        errorMessage += "Enter a valid Phone number with 10 digits.\n";
-        document.getElementById('phoneNumber').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('phoneNumber').style.borderColor = "";
-    }
+  // Validate Mobile Number
+  if (isNaN(mobileNumber) || mobileNumber.length !== 10) {
+    errorMessage += 'Enter a valid Mobile number with 10 digits.\n';
+    document.getElementById('mobileNumber').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('mobileNumber').style.borderColor = '';
+  }
 
-    // Validate Mobile Number
-    if (isNaN(mobileNumber) || mobileNumber.length !== 10) {
-        errorMessage += "Enter a valid Mobile number with 10 digits.\n";
-        document.getElementById('mobileNumber').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('mobileNumber').style.borderColor = "";
-    }
+  // Validate Email
+  if (!emailPattern.test(email)) {
+    errorMessage += 'Please enter a valid email address.\n';
+    document.getElementById('email').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('email').style.borderColor = '';
+  }
 
-    // Validate Email
-    if (!emailPattern.test(email)) {
-        errorMessage += "Please enter a valid email address.\n";
-        document.getElementById('email').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('email').style.borderColor = "";
-    }
+  // Validate Spouse Religion
+  if (spouseReligion !== '' && spouseReligion.length < 4) {
+    errorMessage += 'Spouse Religion must have at least 4 characters.\n';
+    document.getElementById('spouseReligion').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('spouseReligion').style.borderColor = '';
+  }
 
-    // Validate Spouse Religion
-    if (spouseReligion != "" && spouseReligion.length < 4) {
-        errorMessage += "Spouse Religion must have at least 4 characters.\n";
-        document.getElementById('spouseReligion').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('spouseReligion').style.borderColor = "";
-    }
-
-    // If the form is valid, you can submit it here or show the error message
-    if (!isValid) {
-        alert(errorMessage); // You can replace this with another way to display the error
-    }
+  // If the form is valid, you can submit it here or show the error message
+  if (!isValid) {
+    alert(errorMessage); // You can replace this with another way to display the error
+  }
 });
 
+document.getElementById('dependentsInfoForm').addEventListener('submit', function (event) {
+  event.preventDefault();
 
-document.getElementById("dependentsInfoForm").addEventListener('submit', function(event) {
-    event.preventDefault();
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName = document.getElementById('lastName').value.trim();
+  const birthDate = new Date(document.getElementById('birthDate').value);
+  const gender = document.getElementById('gender').value;
+  const relationship = document.getElementById('relationship').value.trim();
+  const inSundaySchool = document.getElementById('inSundaySchool').value.trim();
 
-    const firstName = document.getElementById('firstName').value.trim();
-    let lastName = document.getElementById('lastName').value.trim();
-    const birthDate = new Date(document.getElementById('birthDate').value);
-    const gender = document.getElementById('gender').value;
-    let relationship = document.getElementById('relationship').value.trim();
-    let inSundaySchool = document.getElementById('inSundaySchool').value.trim();
+  let isValid = true;
+  let errorMessage = '';
 
-    let isValid = true;
-    let errorMessage = "";
-
-    // Validate First Name
-    if (firstName === "") {
-        errorMessage += "First Name is required.\n";
-        document.getElementById('firstName').style.borderColor = "red";
-        isValid = false;
-    } else if (firstName.length < 4) {
-        errorMessage += "First Name must have at least 4 characters.\n";
-        document.getElementById('firstName').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('firstName').style.borderColor = "";
-    }
-
-    // Validate Last Name
-    if (lastName === "") {
-        errorMessage += "Last Name is required.\n";
-        document.getElementById('lastName').style.borderColor = "red";
-        isValid = false;
-    } else if (lastName.length < 4) {
-        errorMessage += "Last Name must have at least 4 characters.\n";
-        document.getElementById('lastName').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('lastName').style.borderColor = "";
-    }
-
-    // Validate Birth Date
-    if (birthDate >= new Date()) {
-        errorMessage += "Birth date cannot be today or in the future.\n";
-        document.getElementById('birthDate').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('birthDate').style.borderColor = "";
-    }
-
-    // Validate Gender
-    if (gender === "") {
-        errorMessage += "Gender is required.\n";
-        document.getElementById('gender').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('gender').style.borderColor = "";
-    }
-
-    // Validate dependent relationship
-    if (relationship == "" || relationship.length < 3) {
-        errorMessage += "Relationship cannot be empty and must have at least 3 characters.\n";
-        document.getElementById('relationship').style.borderColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('relationship').style.borderColor = "";
-    }
-
-   // Validate attends suday school relationship
-   if (inSundaySchool == "") {
-    errorMessage += "This feld cannot cannot be empty.\n";
-    document.getElementById('inSundaySchool').style.borderColor = "red";
+  // Validate First Name
+  if (firstName === '') {
+    errorMessage += 'First Name is required.\n';
+    document.getElementById('firstName').style.borderColor = 'red';
     isValid = false;
-} else {
-    document.getElementById('inSundaySchool').style.borderColor = "";
-}
+  } else if (firstName.length < 4) {
+    errorMessage += 'First Name must have at least 4 characters.\n';
+    document.getElementById('firstName').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('firstName').style.borderColor = '';
+  }
 
-    // If the form is valid, you can submit it here or show the error message
-    if (!isValid) {
-        alert(errorMessage); // You can replace this with another way to display the error
-    }
+  // Validate Last Name
+  if (lastName === '') {
+    errorMessage += 'Last Name is required.\n';
+    document.getElementById('lastName').style.borderColor = 'red';
+    isValid = false;
+  } else if (lastName.length < 4) {
+    errorMessage += 'Last Name must have at least 4 characters.\n';
+    document.getElementById('lastName').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('lastName').style.borderColor = '';
+  }
+
+  // Validate Birth Date
+  if (birthDate >= new Date()) {
+    errorMessage += 'Birth date cannot be today or in the future.\n';
+    document.getElementById('birthDate').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('birthDate').style.borderColor = '';
+  }
+
+  // Validate Gender
+  if (gender === '') {
+    errorMessage += 'Gender is required.\n';
+    document.getElementById('gender').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('gender').style.borderColor = '';
+  }
+
+  // Validate dependent relationship
+  if (relationship === '' || relationship.length < 3) {
+    errorMessage += 'Relationship cannot be empty and must have at least 3 characters.\n';
+    document.getElementById('relationship').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('relationship').style.borderColor = '';
+  }
+
+  // Validate attends suday school relationship
+  if (inSundaySchool === '') {
+    errorMessage += 'This feld cannot cannot be empty.\n';
+    document.getElementById('inSundaySchool').style.borderColor = 'red';
+    isValid = false;
+  } else {
+    document.getElementById('inSundaySchool').style.borderColor = '';
+  }
+
+  // If the form is valid, you can submit it here or show the error message
+  if (!isValid) {
+    alert(errorMessage); // You can replace this with another way to display the error
+  }
 });
 
 // document.querySelector('form').addEventListener('submit', function (event) {
 //   event.preventDefault(); // Prevent form submission to validate first
-  
+
 //   const emailInput = document.getElementById('email');
 //   const passwordInput = document.getElementById('password');
 //   const email = emailInput.value.trim();
@@ -527,12 +523,11 @@ document.getElementById("dependentsInfoForm").addEventListener('submit', functio
 //   }
 // });
 
-
 // const form = document.getElementById('form');
 // const FirstName = document.getElementById('FirstName');
 // const LastName = document.getElementById('LastName');
 // const email = document.getElementById('email');
-// const password = document.getElementById('password');  
+// const password = document.getElementById('password');
 
 // form.addEventListener('submit',e =>{
 //   e.preventDefault();
@@ -563,7 +558,6 @@ document.getElementById("dependentsInfoForm").addEventListener('submit', functio
 //   return re.test(String(email).toLowerCase());
 // }
 
-
 // const validateInputs = () => {
 //   const firstNameValue = FirstName.value.trim();
 //   const lastNameValue = LastName.valuealue.trim();
@@ -589,9 +583,9 @@ document.getElementById("dependentsInfoForm").addEventListener('submit', functio
 //     } else{
 //       setSuccess(email)
 //     }
-   
+
 //     }
-    
+
 //     if(passwordValue === '') {
 //       setError(password, 'Password is required');
 //     } else if(passwordValue.length < 8){
@@ -599,4 +593,3 @@ document.getElementById("dependentsInfoForm").addEventListener('submit', functio
 //     } else{
 //       setSuccess(password)
 //     }
-
