@@ -17,11 +17,11 @@ setInterval(updateDateTime, 1000);
 updateDateTime();
 
 // Button navigation
-function navigateTo (page) {
-  window.location.href = page;
-}
+// function navigateTo (page) {
+//   window.location.href = page;
+// }
 
-navigateTo();
+// navigateTo("dashboard.html");
 
 function changeLabelColor () {
   const selectElement = document.getElementById('MemberStatusSelect');
