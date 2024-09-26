@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
+    <title>Bookings</title>
+</head>
+<body>
+    <div class="topbar">
+        <div>
+            <span class="date-time-display"></span>
+            <a class="logged-user" href="#"><img alt="user icon" src="./assets/user.png"/></a>
+        </div>
+    </div>
+    <section class="sidebar">
+       <ul>
+        <li><a href="./dashboard.html"><img alt="dashboard icon" src="./assets/collage.png"/>Dashboard</a></li>
+        <li><a href="./finances.html"><img alt="finances icon" src="./assets/money.png"/>Finances</a></li>
+        <li><a href="./reports.html"><img alt="reports icon" src="./assets/analytics.png"/>Reports</a></li>
+        <li><a><img alt="settings icon" src="./assets/setting.png"/>Settings</a></li>
+        <li><a href="./signin.html"><img alt="logout icon" src="./assets/exit.png"/>Logout</a></li>
+       </ul>
+    </section>
+    <article class="container">
+        <div class="control-wrapper">
+            <button class="view-members-button" onclick="location.href='view-members.html'">View Members</button>
+            <button class="add-members-button"  onclick="location.href='add-member.html'">Add Member</button>
+            <button class="bookings"  onclick="location.href='bookings.html'">Bookings</button>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search by keyword: Name(s) or Member ID" />
+                <button class="search-button"><img src="./assets/loupe.png" alt="Search" /></button>
+            </div>
+            
+        </div>
+        <div class="heading-wrapper">
+            <h1>Bookings</h1>
+        </div>
+    </article>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>

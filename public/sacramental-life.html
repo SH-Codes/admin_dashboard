@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
+    <title>Add Member | Sacramental Life</title>
+</head>
+<body>
+    <div class="topbar">
+        <div>
+            <h3 class="date-time-display"></h3>
+            <a class="logged-user" href="#"><img alt="user icon" src="./assets/user.png"/></a>
+        </div>
+    </div>
+    <section class="sidebar">
+       <ul>
+        <li><a href="./dashboard.html"><img alt="dashboard icon" src="./assets/collage.png"/>Dashboard</a></li>
+        <li><a href="./finances.html"><img alt="finances icon" src="./assets/money.png"/>Finances</a></li>
+        <li><a href="./reports.html"><img alt="reports icon" src="./assets/analytics.png"/>Reports</a></li>
+        <li><a><img alt="settings icon" src="./assets/setting.png"/>Settings</a></li>
+        <li><a href="./signin.html"><img alt="logout icon" src="./assets/exit.png"/>Logout</a></li>
+       </ul>
+    </section>
+    <article class="container">
+        <div class="control-wrapper">
+            <button class="view-members-button" onclick="location.href='view-members.html'">View Members</button>
+            <button class="add-members-button"  onclick="location.href='add-member.html'">Add Member</button>
+            <button class="bookings"  onclick="location.href='bookings.html'">Bookings</button>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search by keyword: Name(s) or Member ID" />
+                <button class="search-button"><img src="./assets/loupe.png" alt="Search" /></button>
+            </div>
+        </div>
+        <div class="heading-wrapper">
+            <h1>Add Member</h1>
+        </div>
+            <form>
+                <div class="form-container">
+                <div class="sub-form-container">
+                <legend>Sacramental Life</legend>
+                <label for="Registration Date"> Sacramental ID:</label>
+                <input type="text" placeholder="Sacramental ID" readonly><br>
+                <label for="MemberId">Member ID:</label>
+                <input id="MemberId" type="text" placeholder="Member ID" readonly><br>
+                <label for="baptised">Baptised</label>
+                <select>
+                    <option></option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select><br>
+                <label for="MemberId">Baptismal Number:</label>
+                <input id="MemberId" type="text" placeholder="Baptismal Number"><br>
+                <label for="Baptismdate">Date of Baptism:</label>
+                <input id="isbaptised" type="date"><br>
+                <label for="placeofbaptism">Place of Baptism:</label>
+                <input id="placeofbaptism" type="text" placeholder="Place of Baptism"><br>
+                <label for="FathersNames">Father's Name(s)</label>
+                <input id="FathersNames" type="text" placeholder="Father's Name"><br>
+                <label for="MothersNames">Mother's Name(s)</label>
+                <input id="MothersNames" type="text" placeholder="Mother's Name"><br>
+                <label for="SponsorsName">Sponsor's Name:</label>
+                <input id="BirthDate" type="text" placeholder="Sponsor's Name"><br>
+                    <div class="form-column-alter">
+                        <label for="BaptismClergyName">Clergy's Name:</label>
+                        <input id="BaptismClergyName" type="text" placeholder="Baptism Clergy Name"><br>
+                        <label for="HolyEucharist">Holy Eucharist?</label>
+                        <Select for="HolyEucharist">
+                            <option></option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </Select><br>
+                        <label for="ConfirmationDate">Confirmation Date:</label>
+                        <input id="ConfirmationDate" type="date"><br>
+                        <label for="ConfirmationPlace">Place Confirmed:</label>
+                        <input id="ConfirmationPlace" type="text" placeholder="Confirmation Place"><br>
+                        <label for="ConfirmationClergy">Confirmation Clergy:</label>
+                        <input id="ConfirmationClergy" type="text" placeholder="Confirmation Clergy"><br>
+                        <label for="HolyEucharist">Holy Matrimony?</label>
+                    <Select for="HolyMatrimony">
+                        <option></option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </Select><br>
+                    <label for="MatrimonyDate">Matrimony Date:</label>
+                        <input type="date"><br>
+                        <label for="MatrimonyPlace">Matrimony Place:</label>
+                        <input type="tel" placeholder="Place of Matrimony"><br>
+                        <label for="MatrimonyClergyName">Matrimony Clergy</label>
+                        <input type="text" placeholder="Matrimony Clergy Name">
+                    </div>
+                </div>
+                <div class="form-buttons-alter-sacraments">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Clear</button>
+                    <button  type="button">Update</button>
+                    <button  type="button">Delete</button>
+                    <button  type="button" onclick="location.href='dependents.html'">Previous</button>
+                </div>
+                </div>
+            </form>
+        </div>
+    </article>
+</body>
+</html>
