@@ -36,3 +36,4 @@
 --     FOREIGN KEY (member_id) REFERENCES MEMBERS(member_id)
 -- ) ENGINE=InnoDB;
 
+ALTER TABLE dependents add attends_sunday_school varchar(3)
