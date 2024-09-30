@@ -48,15 +48,6 @@
         <div class="heading-wrapper">
             <h1>Add Member</h1>
            <div class="errorSpace"><span class="error"></span></div>
-            <div style="float: right; margin-top: -5.5em;">
-                <Strong><label for="MemberStatus" id="memberStatusLabel" style="margin-right: -5em;">Status:</label></Strong>
-            <select class="memberStatus" style="width: 8em; margin-right: 1.40em;">
-                <option></option>
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-                <option value="Deceased">Deceased</option>
-            </select>
-            </div>
         </div>
             <form id="personalInfoForm">
                 <div class="form-container">
@@ -96,7 +87,15 @@
                         <option>Student</option>
                         <option>Pensioner</option>
                     </select><br>
-                   
+                    <div style="float: right; margin-top: -22.5em; margin-right: -6.2em;">
+                        <Strong><label for="MemberStatus" id="memberStatusLabel" style="margin-right: -5em;">Status:</label></Strong>
+                    <select class="memberStatus" style="width: 8em; margin-right: 1.40em;">
+                        <option></option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                        <option value="Deceased">Deceased</option>
+                    </select>
+                    </div>
                     <div class="form-column">
                         <label for="occupation">Occupation:</label>
                         <input type="text" id="occupation" placeholder="Occupation"><br>

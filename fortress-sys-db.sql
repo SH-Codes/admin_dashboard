@@ -36,4 +36,79 @@
 --     FOREIGN KEY (member_id) REFERENCES MEMBERS(member_id)
 -- ) ENGINE=InnoDB;
 
-ALTER TABLE dependents add attends_sunday_school varchar(3)
+-- CREATE TABLE MEMBERS(
+--     registration_date DATE,
+--     member_id NUMERIC(8) NOT NULL,
+--     first_name VARCHAR(32),
+--     last_name VARCHAR(32),
+--     birth_date DATE,
+--     gender VARCHAR(6),
+--     marital_status VARCHAR(10),
+--     employment_status VARCHAR(14),
+--     occupation VARCHAR(42),
+--     member_status VARCHAR(10),
+--     phone_number VARCHAR(10),
+--     mobile_number VARCHAR(10),
+--     email VARCHAR(64),
+--     address_line1 VARCHAR(64),
+--     address_line2 VARCHAR(64),
+--     zone_area VARCHAR(64),
+--     postal_code NUMERIC(4),
+--     PRIMARY KEY (member_id)
+-- )
+
+-- CREATE TABLE SPOUSES (
+--     spouse_id INT NOT NULL AUTO_INCREMENT,
+--     member_id NUMERIC NOT NULL,
+--     spouse_first_name VARCHAR(32),
+--     spouse_maiden_name VARCHAR(32),
+--     spouse_last_name VARCHAR(32),
+--     spouse_birth_date DATE,
+--     spouse_gender VARCHAR(6),
+--     spouse_phone_number VARCHAR(10),
+--     spouse_mobile_number VARCHAR(10),
+--     spouse_email VARCHAR(64),
+--     spouse_employment_status VARCHAR(14),
+--     spouse_occupation VARCHAR(42),
+--     PRIMARY KEY (spouse_id),
+--     FOREIGN KEY (member_id) REFERENCES MEMBERS(member_id)
+-- ) ENGINE=InnoDB;
+
+-- CREATE TABLE MEMBERS(
+--     registration_date DATE,
+--     member_id NUMERIC(8) NOT NULL,
+--     first_name VARCHAR(32),
+--     last_name VARCHAR(32),
+--     birth_date DATE,
+--     gender VARCHAR(6),
+--     marital_status VARCHAR(10),
+--     employment_status VARCHAR(14),
+--     occupation VARCHAR(42),
+--     member_status VARCHAR(10),
+--     phone_number VARCHAR(10),
+--     mobile_number VARCHAR(10),
+--     email VARCHAR(64),
+--     address_line1 VARCHAR(64),
+--     address_line2 VARCHAR(64),
+--     zone_area VARCHAR(64),
+--     postal_code NUMERIC(4),
+--     PRIMARY KEY (member_id)
+-- )
+
+-- CREATE TABLE SPOUSES (
+--     spouse_id INT NOT NULL AUTO_INCREMENT,
+--     member_id NUMERIC NOT NULL,
+--     spouse_first_name VARCHAR(32),
+--     spouse_maiden_name VARCHAR(32),
+--     spouse_last_name VARCHAR(32),
+--     spouse_birth_date DATE,
+--     spouse_gender VARCHAR(6),
+--     spouse_phone_number VARCHAR(10),
+--     spouse_mobile_number VARCHAR(10),
+--     spouse_email VARCHAR(64),
+--     spouse_employment_status VARCHAR(14),
+--     spouse_occupation VARCHAR(42),
+--     PRIMARY KEY (spouse_id),
+--     FOREIGN KEY (member_id) REFERENCES MEMBERS(member_id)
+-- ) ENGINE=InnoDB;
+
